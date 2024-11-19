@@ -18,5 +18,6 @@ struct s21_cat_flags parse_flags(int argc, char **argv);
 void print_file(char *name, struct s21_cat_flags flags);
 void print_symb(int ch, int *prev, int *line_num, struct s21_cat_flags flags);
 int s21_set_s(struct s21_cat_flags flag_set, int ch, int prev, int *emp_lines);
+void s21_set_v(int ch);
 
 #endif //S21_SIMPLEBASH_S21_CAT_H

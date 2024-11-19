@@ -91,7 +91,9 @@ void print_symb(int ch, int *prev, int *line_num, struct s21_cat_flags flags) {
     }
 
     if (flags.s21_cat_show_tabs == 1 && ch == '\t') {
-        printf("^");
+        printf("^I");
+    } else if (flags.s21_cat_show_nonprinting == 1 && (ch < 32 || ch == 127)) {
+        s21_set_v(ch);
     }
 
     printf("%c", ch);
@@ -110,6 +112,16 @@ int s21_set_s(struct s21_cat_flags flag_set, int ch, int prev, int *emp_lines) {
     }
 
     return res;
+}
+
+void s21_set_v(int ch) {
+    if (ch >= 0 && ch < 32) {
+        printf("^%c", ch + 64);
+    } else if (ch == 127) {
+        printf("^?");
+    } else {
+        printf("%c", ch);
+    }
 }
 
 void print_file(char *name, struct s21_cat_flags flags) {
