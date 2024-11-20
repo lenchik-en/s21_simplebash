@@ -1,0 +1,9 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+This is a sample text file to test the grep utility implementation.
+Searching for specific words in a large file can be a challenging task.
+The quick brown fox jumps over the lazy dog.
+This -line contains the word "search", which should be detected.
+Sometimes a match may be found at the beginning, middle, or end of a -line.
+Grep is commonly used in programming and system administration.
+Make sure to handle edge cases, like line that are empty or contain special characters.
+End of the test file. Good luck!
